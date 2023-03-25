@@ -56,6 +56,5 @@ public class _Function {
     System.out.println(incrementByOneAndMultiply(1, 10));
     System.out.println(incrementByOneAndMultiplyBiFunction.apply(1, 10));
 
-
   }
 }
