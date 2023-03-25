@@ -28,6 +28,7 @@ public class _Function {
 
   public static void main(String[] args) {
     int increment;
+    int multiply;
 
     // Function
     System.out.println("Function");
@@ -38,7 +39,7 @@ public class _Function {
     increment = incrementByOneFunction.apply(1);
     System.out.println(increment);
 
-    int multiply = multiplyBy10Function.apply(increment);
+    multiply = multiplyBy10Function.apply(increment);
     System.out.println(multiply);
 
     System.out.println();
