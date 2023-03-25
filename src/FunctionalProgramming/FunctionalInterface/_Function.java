@@ -7,24 +7,23 @@ public class _Function {
 
 
   static int incrementByOne(int number) {
-    return number+1;
+    return number + 1;
   }
 
-  static Function<Integer, Integer> incrementByOneFunction = number -> number + 1;
+  static Function<Integer, Integer> incrementByOneFunction =
+          number -> number + 1;
 
-  static int multiplyBy10(int number) {
-    return 10 * number;
-  }
+  static Function<Integer, Integer> multiplyBy10Function =
+          number -> 10 * number;
 
-  static Function<Integer, Integer> multiplyBy10Function = number -> 10 * number;
 
 
   static int incrementByOneAndMultiply(int number, int numberToMultiply) {
-    return (number+1) * numberToMultiply;
+    return (number + 1) * numberToMultiply;
   }
 
   static BiFunction<Integer, Integer, Integer> incrementByOneAndMultiplyBiFunction =
-          (number, numberToMultiply) -> (number+1) * numberToMultiply;
+          (number, numberToMultiply) -> (number + 1) * numberToMultiply;
 
 
   public static void main(String[] args) {
@@ -35,13 +34,12 @@ public class _Function {
 
     increment = incrementByOne(1);
     System.out.println(increment);
-    incrementByOneFunction.apply(1);
+
+    increment = incrementByOneFunction.apply(1);
     System.out.println(increment);
 
-    System.out.println(multiplyBy10(2));
-    System.out.println(multiplyBy10(increment));
-    System.out.println(multiplyBy10Function.apply(2));
-    System.out.println(multiplyBy10Function.apply(increment));
+    int multiply = multiplyBy10Function.apply(increment);
+    System.out.println(multiply);
 
     System.out.println();
 
