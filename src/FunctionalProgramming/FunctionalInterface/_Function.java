@@ -50,7 +50,9 @@ public class _Function {
     Function<Integer, Integer> incrementByOneAndMultiplyBy10Function =
             number -> incrementByOneFunction.andThen(multiplyBy10Function).apply(number);
 
+    // Proto
     System.out.println(incrementByOneAndMultiplyBy10Function.apply(1));
+
     System.out.println(incrementByOneAndMultiply(1, 10));
     System.out.println(incrementByOneAndMultiplyBiFunction.apply(1, 10));
 
