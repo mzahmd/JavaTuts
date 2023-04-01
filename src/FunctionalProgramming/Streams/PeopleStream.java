@@ -3,9 +3,6 @@ package FunctionalProgramming.Streams;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
-import java.util.stream.IntStream;
-import java.util.stream.LongStream;
-import java.util.stream.Stream;
 
 import static FunctionalProgramming.Streams.PeopleStream.Gender.MALE;
 import static FunctionalProgramming.Streams.PeopleStream.Gender.FEMALE;
