@@ -35,6 +35,8 @@ class PeopleStream {
     );
 
 
+    System.out.println("The Length of all the people names");
+
     Function<Person, String> name = Person::name;
     ToIntFunction<String> length = String::length;
     people.stream().map(name)
@@ -43,11 +45,16 @@ class PeopleStream {
 
     System.out.println();
 
-    boolean gender = people.stream()
-            .noneMatch(person -> PREFER_NOT_TO_SAY.equals(person.gender));
-    System.out.println(gender);
+    System.out.print("Is there a person who does not want to say their gender ? Answer: ");
+
+    boolean gender;
+    gender = people.stream()
+            .anyMatch(person -> PREFER_NOT_TO_SAY.equals(person.gender));
+    System.out.println(gender ? "Yes they exist" : "No they do not exist");
 
     System.out.println();
+
+
 
   }
 }
