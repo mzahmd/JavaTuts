@@ -1,57 +1,12 @@
 package FunctionalProgramming.Streams;
 
-import java.util.List;
-import java.util.function.Function;
-import java.util.function.ToIntFunction;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-import static FunctionalProgramming.Streams._Stream.Gender.MALE;
-import static FunctionalProgramming.Streams._Stream.Gender.FEMALE;
-import static FunctionalProgramming.Streams._Stream.Gender.PREFER_NOT_TO_SAY;
-
-class _Stream {
-
-  enum Gender {
-    MALE,
-    FEMALE,
-    PREFER_NOT_TO_SAY
-  }
-
-  record Person(String name, Gender gender){
-
-    @Override
-    public String toString() {
-      return "Person {name='" + name + "', gender=" + gender + "}";
-    }
-  }
-
+public class _Stream {
 
   public static void main(String[] args) {
-    List<Person> people = List.of(
-            new Person("Peter", MALE),
-            new Person("Alice", FEMALE),
-            new Person("Aisha", FEMALE),
-            new Person("Alex", MALE),
-            new Person("John", MALE)
-    );
-
-
-    Function<Person, String> name = Person::name;
-    ToIntFunction<String> length = String::length;
-    people.stream().map(name)
-            .mapToInt(length)
-            .forEach(System.out::println);
-
-    System.out.println();
-
-    boolean gender = people.stream()
-            .noneMatch(person -> PREFER_NOT_TO_SAY.equals(person.gender));
-    System.out.println(gender);
-
-    System.out.println();
-
     LongStream longStream;
     IntStream intStream;
 
@@ -69,7 +24,6 @@ class _Stream {
             .boxed();
 
     integerStream.forEach(System.out::println);
-
 
   }
 }
