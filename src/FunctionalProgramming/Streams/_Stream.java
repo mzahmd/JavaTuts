@@ -7,7 +7,9 @@ import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-import static FunctionalProgramming.Streams._Stream.Gender.*;
+import static FunctionalProgramming.Streams._Stream.Gender.MALE;
+import static FunctionalProgramming.Streams._Stream.Gender.FEMALE;
+import static FunctionalProgramming.Streams._Stream.Gender.PREFER_NOT_TO_SAY;
 
 class _Stream {
 
