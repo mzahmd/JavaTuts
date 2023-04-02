@@ -1,7 +1,10 @@
 package FunctionalProgramming.Streams;
 
 import java.util.List;
+import java.util.Arrays;
 import java.util.OptionalInt;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
@@ -56,6 +59,13 @@ public class _Stream {
             .mapToObj(x -> x+1)
             .forEach(x -> System.out.print(x + " "));
     // Output: 2, 3, 4
+
+    System.out.println('\n');
+
+    // remove all duplicates
+    int[] array = {1, 1, 2, 3, 4, 5, 6, 3, 2, 2, 2, 3, 3, 4, 4, 6, 8, 9 , 0, 7, 5, 4};
+    Set<Integer> integerSet = Arrays.stream(array).boxed().collect(Collectors.toSet());
+    System.out.println(integerSet);
 
     System.out.println('\n');
 
