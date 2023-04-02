@@ -39,7 +39,6 @@ public class _Stream {
     longStream.forEach(x -> System.out.print(x + " "));
     // Output: 2, 3, 4
 
-
     System.out.println('\n');
 
     // Convert IntStream to a Stream<Integer>
@@ -60,8 +59,21 @@ public class _Stream {
     System.out.println('\n');
 
 
+    System.out.println("reduce: ");
+    int reduceOutput;
 
-    System.out.println("\n\n");
+    reduceOutput = IntStream.range(1,11).reduce(1, (int identity, int y) -> identity);
+    System.out.println("Mein Output 1: " + reduceOutput);
+    // Output: 1
+
+    reduceOutput = IntStream.range(1,11).reduce(1, (int identity, int iterate) -> iterate);
+    System.out.println("Mein Output 2: " + reduceOutput);
+    // Output: 10
+
+
+
+
+    System.out.println("\n");
     System.out.println("Finish !!!");
   }
 }
