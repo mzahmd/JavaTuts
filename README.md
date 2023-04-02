@@ -1,3 +1,3 @@
 # JavaTuts
 
-in progress
+just Java stuff
