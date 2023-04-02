@@ -1,5 +1,6 @@
 package FunctionalProgramming.Streams;
 
+import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
@@ -7,23 +8,43 @@ import java.util.stream.Stream;
 public class _Stream {
 
   public static void main(String[] args) {
-    LongStream longStream;
-    IntStream intStream;
+    List<Integer> integerList = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-    longStream = IntStream.of(1, 2, 3).mapToLong(x -> x+1);
-    longStream.forEach(System.out::println);
-
-    intStream = IntStream.range(1, 4).map(x -> x+1).filter(x -> x<3);
-    intStream.forEach(System.out::println);
+    Stream.iterate(1, x -> x+1).map(x -> x*10).limit(10).forEach(System.out::println);
+    // Output: 10 20 30 40 50 60 70 80 90 100
 
     System.out.println();
 
-    Stream<Integer> integerStream;
-    integerStream = IntStream.range(1, 4)
-            .map(x -> x+1)
-            .boxed();
+    integerList.stream().filter(x -> x>5).forEach(System.out::println);
+    // Output: 6, 7, 8, 9, 10
 
-    integerStream.forEach(System.out::println);
+    System.out.println();
+
+    LongStream longStream;
+    IntStream intStream;
+
+    // Convert IntStream to a LongStream
+    longStream = IntStream.of(1, 2, 3).mapToLong(x -> x+1);
+    longStream.forEach(System.out::println);
+    // Output: 2, 3, 4
+
+    System.out.println();
+
+    intStream = IntStream.range(1, 4).map(x -> x+1).filter(x -> x<3);
+    intStream.forEach(System.out::println);
+    // Output: 3
+
+    System.out.println();
+
+    IntStream.range(1, 4)
+            .map(x -> x+1)
+            .boxed()
+            .forEach(System.out::println);
+
+    IntStream.range(1, 4)
+            .mapToObj(x -> x+1)
+            .forEach(System.out::println);
+
 
   }
 }
