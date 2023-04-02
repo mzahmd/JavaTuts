@@ -1,6 +1,7 @@
 package FunctionalProgramming.Streams;
 
 import java.util.List;
+import java.util.OptionalInt;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
@@ -59,7 +60,8 @@ public class _Stream {
     System.out.println('\n');
 
 
-    System.out.println("reduce: ");
+    System.out.println("reduce:");
+    System.out.println("With Identity");
     int reduceOutput;
 
     reduceOutput = IntStream.range(1,11).reduce(1, (int identity, int y) -> identity);
@@ -70,8 +72,38 @@ public class _Stream {
     System.out.println("Mein Output 2: " + reduceOutput);
     // Output: 10
 
+    reduceOutput = IntStream.range(1,11).reduce(1, (int identity, int iterate) -> iterate+100);
+    System.out.println("Mein Output 3: " + reduceOutput);
+    // Output: 110
+
+    // reduceOutput = IntStream.range(1,3).reduce(1, (int identity, int iterate) -> identity+iterate);
+    reduceOutput = IntStream.range(1,3).reduce(1, Integer::sum);
+    System.out.println("Mein Output 4: " + reduceOutput);
+    // Output: 4
 
 
+    System.out.println("\nWithout Identity");
+    OptionalInt optionalIntOutput;
+
+    optionalIntOutput = IntStream.range(1,11).reduce((result, iterate) -> iterate);
+    System.out.println("Mein Output 1: " + (optionalIntOutput.isPresent() ? optionalIntOutput.getAsInt() : "No Value"));
+    // Output: 10
+
+    optionalIntOutput = IntStream.range(1,11).reduce((result, iterate) -> result);
+    System.out.println("Mein Output 2: " + (optionalIntOutput.isPresent() ? optionalIntOutput.getAsInt() : "No Value"));
+    // Output: 1
+
+    optionalIntOutput = IntStream.range(1,5).reduce((result, iterate) -> result + 10);
+    System.out.println("Mein Output 3: " + (optionalIntOutput.isPresent() ? optionalIntOutput.getAsInt() : "No Value"));
+    // Output: 31
+
+    optionalIntOutput = IntStream.range(3,5).reduce((result, iterate) -> iterate + 10);
+    System.out.println("Mein Output 4: " + (optionalIntOutput.isPresent() ? optionalIntOutput.getAsInt() : "No Value"));
+    // Output: 14
+
+    optionalIntOutput = IntStream.range(3,5).reduce(Integer::sum);
+    System.out.println("Mein Output 5: " + (optionalIntOutput.isPresent() ? optionalIntOutput.getAsInt() : "No Value"));
+    // Output: 7
 
     System.out.println("\n");
     System.out.println("Finish !!!");
