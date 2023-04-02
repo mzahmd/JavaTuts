@@ -54,6 +54,11 @@ class PeopleStream {
 
     System.out.println();
 
+    System.out.println("My List: ");
+
+    people.stream()
+            .map(Person::name)
+            .forEach(System.out::println);
 
 
   }
