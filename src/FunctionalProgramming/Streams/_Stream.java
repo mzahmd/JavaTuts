@@ -57,6 +57,9 @@ public class _Stream {
             .forEach(x -> System.out.print(x + " "));
     // Output: 2, 3, 4
 
+    System.out.println('\n');
+
+
 
     System.out.println("\n\n");
     System.out.println("Finish !!!");
