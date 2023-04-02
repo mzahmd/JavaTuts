@@ -10,41 +10,47 @@ public class _Stream {
   public static void main(String[] args) {
     List<Integer> integerList = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-    Stream.iterate(1, x -> x+1).map(x -> x*10).limit(10).forEach(System.out::println);
+    Stream.iterate(1, x -> x+1).map(x -> x*10).limit(10).forEach(x -> System.out.print(x + " "));
     // Output: 10 20 30 40 50 60 70 80 90 100
 
-    System.out.println();
+    System.out.println('\n');
 
-    integerList.stream().filter(x -> x>5).forEach(System.out::println);
+    integerList.stream().filter(x -> x>5).forEach(x -> System.out.print(x + " "));
     // Output: 6, 7, 8, 9, 10
 
-    System.out.println();
+    System.out.println('\n');
 
-    LongStream longStream;
-    IntStream intStream;
+    IntStream intStream = IntStream.range(1, 4)
+            .map(x -> x+1)
+            .filter(x -> x<3);
+    intStream.forEach(x -> System.out.print(x + " "));
+    // Output: 2
+
+    System.out.println('\n');
 
     // Convert IntStream to a LongStream
-    longStream = IntStream.of(1, 2, 3).mapToLong(x -> x+1);
-    longStream.forEach(System.out::println);
+    LongStream longStream = IntStream.of(1, 2, 3).mapToLong(x -> x+1);
+    longStream.forEach(x -> System.out.print(x + " "));
     // Output: 2, 3, 4
 
-    System.out.println();
 
-    intStream = IntStream.range(1, 4).map(x -> x+1).filter(x -> x<3);
-    intStream.forEach(System.out::println);
-    // Output: 3
-
-    System.out.println();
+    System.out.println('\n');
 
     IntStream.range(1, 4)
             .map(x -> x+1)
             .boxed()
-            .forEach(System.out::println);
+            .forEach(x -> System.out.print(x + " "));
+    // Output: 2, 3, 4
+
+    System.out.println('\n');
 
     IntStream.range(1, 4)
             .mapToObj(x -> x+1)
-            .forEach(System.out::println);
+            .forEach(x -> System.out.print(x + " "));
+    // Output: 2, 3, 4
 
 
+    System.out.println("\n\n");
+    System.out.println("Finish !!!");
   }
 }
