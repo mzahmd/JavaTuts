@@ -91,8 +91,8 @@ public class _Stream {
     System.out.println("Mein Output 4: " + reduceOutput);
     // Output: 4
 
-
-    System.out.println("\nWithout Identity");
+    System.out.println();
+    System.out.println("Without Identity");
     OptionalInt optionalIntOutput;
 
     optionalIntOutput = IntStream.range(1,11).reduce((result, iterate) -> iterate);
