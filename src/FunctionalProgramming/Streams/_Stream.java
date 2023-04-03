@@ -92,6 +92,7 @@ public class _Stream {
     // Output: 4
 
     System.out.println();
+
     System.out.println("Without Identity");
     OptionalInt optionalIntOutput;
 
