@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-public class _Stream {
+class _Stream {
 
   public static void main(String[] args) {
     List<Integer> integerList = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
