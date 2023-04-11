@@ -60,6 +60,5 @@ class PeopleStream {
             .map(Person::name)
             .forEach(System.out::println);
 
-
   }
 }
